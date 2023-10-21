@@ -25,16 +25,16 @@ composer install
 
 > Copy the .env.example file and rename it to .env
 
-### Step 4: Run the migrations
-
-```
-php artisan migrate
-```
-
-### Step 5: Run the project
+### Step 4: Run the project
 
 ```
 ./vendor/bin/sail up
+```
+
+### Step 5: Run the migrations
+
+```
+php artisan migrate
 ```
 
 ### Step 6: Call Expeneses API
@@ -52,12 +52,6 @@ php artisan migrate
 
 #### API Request
 
-  ```
-  http://localhost/api/expenses
-  ```
-
-example:-
-
 ```
 http://localhost/api/expenses?search=Prof&expense_types[]=insurance&expense_types[]=fuel&min_creation_date=1970-01-16&sort_type=desc&sort_by=cost
 ```
@@ -65,5 +59,5 @@ http://localhost/api/expenses?search=Prof&expense_types[]=insurance&expense_type
 #### Browser Request
 
   ```
-http://localhost/api/expenses?search=Prof&expense_types[]=insurance&expense_types[]=fuel&min_creation_date=1970-01-16&sort_type=desc&sort_by=cost
+http://localhost/expenses?search=Prof&expense_types[]=insurance&expense_types[]=fuel&min_creation_date=1970-01-16&sort_type=desc&sort_by=cost
   ``` 
