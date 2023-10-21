@@ -20,11 +20,10 @@ class ExpensesFilter
         if (isset($filters['search'])) {
             $rows->where('t.vehicle_name', 'like', '%' . $filters['search'] . '%');
         }
-
+        
         // Filter by expense type(s)
         if (isset($filters['expense_types'])) {
-            $expenseTypes = explode(',', $filters['expense_types']);
-            $rows->whereIn('t.type', $expenseTypes); //TODO:: create enum for it and validate
+            $rows->whereIn('t.type', $filters['expense_types']);
         }
 
         // Filter by minimum cost
@@ -46,8 +45,8 @@ class ExpensesFilter
         if (isset($filters['max_creation_date'])) {
             $rows->whereDate('t.created_at', '<=', $filters['max_creation_date']);
         }
-        
-        $rows->orderBy($filters['sort_by'] ?? 't.created_at', $filters['sort_direction'] ?? 'asc');
+
+        $rows->orderBy($filters['sort_by'] ?? 't.created_at', $filters['sort_type'] ?? 'asc');
 
         return $rows;
     }

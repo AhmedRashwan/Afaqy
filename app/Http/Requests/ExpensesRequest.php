@@ -26,7 +26,7 @@ class ExpensesRequest extends FormRequest
     {
         return [
             'vehicle_name' => 'string',
-            'expense_types' => 'string',
+            'expense_types' => 'array|in:fuel,insurance,service',
             'min_cost' => 'numeric',
             'max_cost' => 'numeric',
             'min_creation_date' => 'date',
