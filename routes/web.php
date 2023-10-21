@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CalculateExpenses;
+use App\Http\Controllers\Expenses;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/expenses", CalculateExpenses::class);
+Route::get("/expenses", Expenses::class);

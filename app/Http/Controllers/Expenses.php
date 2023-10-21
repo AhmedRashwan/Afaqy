@@ -8,9 +8,10 @@ use App\Models\InsurancePayment;
 use App\Models\Service;
 use App\Utils\ExpensesFilter;
 use Exception;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
-class CalculateExpenses extends Controller
+class Expenses extends Controller
 {
 
     /**
@@ -37,7 +38,12 @@ class CalculateExpenses extends Controller
                 'Content-Type' => 'application/json'
             ]);
         } catch (Exception $exception) {
-            dd($exception->getMessage());
+            Log::error($exception->getMessage());
+            return response()->json([
+                'success' => false,
+                'message' => 'Something went wrong',
+                'data' => null,
+            ], 500);
         }
     }
 }

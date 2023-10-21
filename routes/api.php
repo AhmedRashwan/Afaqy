@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CalculateExpenses;
+use App\Http\Controllers\Expenses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get("/expenses", CalculateExpenses::class);
+Route::get("/expenses", Expenses::class);
