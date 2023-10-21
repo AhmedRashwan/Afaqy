@@ -61,3 +61,9 @@ http://localhost/api/expenses?search=Prof&expense_types[]=insurance&expense_type
   ```
 http://localhost/expenses?search=Prof&expense_types[]=insurance&expense_types[]=fuel&min_creation_date=1970-01-16&sort_type=desc&sort_by=cost
   ``` 
+
+### Step 7: Run the tests
+
+```
+./vendor/bin/sail artisan test
+```

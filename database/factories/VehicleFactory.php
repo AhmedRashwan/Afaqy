@@ -19,11 +19,11 @@ class VehicleFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'plate_number' => $this->faker->randomNumber(6),
-            'imei' => $this->faker->randomNumber(6),
-            'vin' => $this->faker->randomNumber(6),
-            'year' => $this->faker->randomNumber(4),
-            'license' => $this->faker->randomNumber(6),
+            'plate_number' => $this->faker->unique()->randomNumber(6),
+            'imei' => $this->faker->unique()->randomNumber(6),
+            'vin' => $this->faker->unique()->randomNumber(6),
+            'year' => $this->faker->year(),
+            'license' => $this->faker->unique()->randomNumber(6),
         ];
     }
 }

@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Service;
+use App\Models\Vehicle;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -24,7 +25,7 @@ class ServiceFactory extends Factory
             'end_date' => $this->faker->dateTime(),
             'invoice_number' => $this->faker->randomNumber(6),
             'purchase_order_number' => $this->faker->randomNumber(6),
-            'status' => $this->faker->randomElement(['paid', 'unpaid']),
+            'status' => 'open',
             'discount' => $this->faker->randomFloat(2, 0, 100),
             'tax' => $this->faker->randomFloat(2, 0, 100),
             'total' => $this->faker->randomFloat(2, 0, 100),
